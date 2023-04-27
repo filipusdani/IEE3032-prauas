@@ -1,0 +1,2746 @@
+[
+    {
+        "id": "281ae58233493eb9",
+        "type": "tab",
+        "label": "M13 - PRAUAS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "179d262fc9692c59",
+        "type": "inject",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 960,
+        "wires": [
+            [
+                "8d779544cc5ee7b1",
+                "8398048f61e4ac43",
+                "241a48c58e482b1e",
+                "721b27cc7511714f",
+                "7b52d8fa0f02a7b8",
+                "15c495e41110a2f4",
+                "9ed7b53b731fc282",
+                "f79b389f9f8e9b33",
+                "c191df4fbfba24fa",
+                "7dfeb401b1d9fac9",
+                "2399e563d36650db",
+                "1031fc25ed77f951",
+                "0f57a014766f0448",
+                "cd98299688844989",
+                "3b441f8dffe669ec",
+                "920e3d806ac88473",
+                "39cadd0ff4632386",
+                "5ad3c4a2eee45fd8",
+                "e61986e0e020f7c0",
+                "bed3605dfe72c0b1",
+                "08ba66385dae2213",
+                "cca4815589fda305",
+                "592a4ed29c79a281",
+                "e3e715614c1b124c",
+                "6edc88fec3c95d05",
+                "bd7c0202a609f224",
+                "7d4e7f8d60b9cbf2"
+            ]
+        ]
+    },
+    {
+        "id": "8d779544cc5ee7b1",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Temperature Infrared ",
+        "low": "-30",
+        "high": "380",
+        "inte": "true",
+        "property": "payload",
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "6c975529a38f48b3",
+                "8d2a840a9d8ec5d6"
+            ]
+        ]
+    },
+    {
+        "id": "61c0b6eebee0cf2d",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 180,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "241a48c58e482b1e",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Conductivity ",
+        "low": "0",
+        "high": "200",
+        "inte": "true",
+        "property": "payload",
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "3d1332af692b0581",
+                "27a360e58749f0ae"
+            ]
+        ]
+    },
+    {
+        "id": "8398048f61e4ac43",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Flow Susu ",
+        "low": "0",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "1ed0e147fa84c96f",
+                "19cfc2c6ac74d81e"
+            ]
+        ]
+    },
+    {
+        "id": "1ed0e147fa84c96f",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/flow",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "97ba6c0aed6fd163",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/conductivity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 220,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "cc7a86b256d28c1a",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/flow",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 260,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "862552f623b84786",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Pabrik Smart Farm",
+        "info": "",
+        "x": 430,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "15ee0a53de1e4b28",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem susu hewani dan telur",
+        "info": "",
+        "x": 470,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "721b27cc7511714f",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor CO",
+        "low": "0",
+        "high": "500",
+        "inte": "true",
+        "property": "payload",
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "20a452e8ef118a4a",
+                "59d3d57036477cf6"
+            ]
+        ]
+    },
+    {
+        "id": "7b52d8fa0f02a7b8",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Amonia",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 380,
+        "wires": [
+            [
+                "22d8d9e2c9ea7153",
+                "51a9cd3807fa6519"
+            ]
+        ]
+    },
+    {
+        "id": "15c495e41110a2f4",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Pressure ",
+        "low": "0",
+        "high": "500",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "5b537bd4c3d9b691",
+                "505a99196083b8f8"
+            ]
+        ]
+    },
+    {
+        "id": "291ec24bd0870899",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem daging merah",
+        "info": "",
+        "x": 450,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3d1332af692b0581",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/conductivity",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 710,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6c975529a38f48b3",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/temperature",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 710,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "20a452e8ef118a4a",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/co",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "22d8d9e2c9ea7153",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/amonia",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5b537bd4c3d9b691",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/pressure",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c4d5ed1628d0066b",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem daging putih",
+        "info": "",
+        "x": 440,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "55a883e256b433b8",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/co",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1210,
+        "y": 340,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "3cde0f13b573c00e",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/amonia",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 380,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "842f1c07dc794271",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/pressure",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 420,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "25745169f6973628",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/o2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1210,
+        "y": 500,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "65a0820c64b3e8a9",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/co2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 540,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "2e158a6adc1a173d",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/waterlevel",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 580,
+        "wires": [
+            [
+                "0572ef338b9cf970"
+            ]
+        ]
+    },
+    {
+        "id": "0572ef338b9cf970",
+        "type": "debug",
+        "z": "281ae58233493eb9",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8d2a840a9d8ec5d6",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "711ccb34613a3b18",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Temperature Infrared",
+        "label": "Celcius",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "380",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 960,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "27a360e58749f0ae",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "711ccb34613a3b18",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Conductivity ",
+        "label": "mS/cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 940,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "19cfc2c6ac74d81e",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "711ccb34613a3b18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Flow Susu ",
+        "label": "L/min",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "59d3d57036477cf6",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "3dd209acc787601b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor CO",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "51a9cd3807fa6519",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "3dd209acc787601b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Amonia",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "505a99196083b8f8",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "3dd209acc787601b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Pressure",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f79b389f9f8e9b33",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor CO2",
+        "low": "0",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 410,
+        "y": 540,
+        "wires": [
+            [
+                "401f3b8bd7cb7747",
+                "5d2b6c4d32e4ac9b"
+            ]
+        ]
+    },
+    {
+        "id": "c191df4fbfba24fa",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Water Level ",
+        "low": "0",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 580,
+        "wires": [
+            [
+                "b5e12cfbc11d3888",
+                "393206cb43ecace9"
+            ]
+        ]
+    },
+    {
+        "id": "401f3b8bd7cb7747",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/co2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b5e12cfbc11d3888",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/waterlevel",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 700,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "5d2b6c4d32e4ac9b",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "a3488491e2c6cbca",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor CO2",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "393206cb43ecace9",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "a3488491e2c6cbca",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Water Level ",
+        "label": "m",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9ed7b53b731fc282",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor O2",
+        "low": "0",
+        "high": "25",
+        "inte": "true",
+        "property": "payload",
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [
+                "098c7ef2394ba81e",
+                "e680a6ac77b0b0d9"
+            ]
+        ]
+    },
+    {
+        "id": "098c7ef2394ba81e",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p1/o2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "e680a6ac77b0b0d9",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "a3488491e2c6cbca",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor O2",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "25",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7dfeb401b1d9fac9",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Soil Moisture",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 440,
+        "y": 760,
+        "wires": [
+            [
+                "af59cbfbf295912b",
+                "6f0807edaab16112"
+            ]
+        ]
+    },
+    {
+        "id": "2399e563d36650db",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor pH ",
+        "low": "0",
+        "high": "14",
+        "inte": "true",
+        "property": "payload",
+        "x": 410,
+        "y": 800,
+        "wires": [
+            [
+                "4e1ca47bc339cb10",
+                "5b31fdc3b2baa341"
+            ]
+        ]
+    },
+    {
+        "id": "1031fc25ed77f951",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Sunlight ",
+        "low": "0",
+        "high": "1000",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 840,
+        "wires": [
+            [
+                "82555f5ef8880c2a",
+                "f0ebf1d4140fd316"
+            ]
+        ]
+    },
+    {
+        "id": "82555f5ef8880c2a",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/sunlight",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "065314eb90d0ab64",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Pabrik Smart Plantation",
+        "info": "",
+        "x": 440,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "55b813c6ac5d89ae",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem sumber karbohidrat",
+        "info": "",
+        "x": 470,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "0f57a014766f0448",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Humidity",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 920,
+        "wires": [
+            [
+                "2a0187c1c3212632",
+                "d25b21be0be9e9ab"
+            ]
+        ]
+    },
+    {
+        "id": "cd98299688844989",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Anemometer",
+        "low": "0",
+        "high": "50",
+        "inte": "true",
+        "property": "payload",
+        "x": 440,
+        "y": 960,
+        "wires": [
+            [
+                "3e277aef39a81b61",
+                "bab9e8f7937f02b0"
+            ]
+        ]
+    },
+    {
+        "id": "3b441f8dffe669ec",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor UV ",
+        "low": "0",
+        "high": "1000",
+        "inte": "true",
+        "property": "payload",
+        "x": 410,
+        "y": 1000,
+        "wires": [
+            [
+                "3ef610400f4d80fd",
+                "24d6f455ec38460f"
+            ]
+        ]
+    },
+    {
+        "id": "3a253e3e7f1c50d8",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem sayuran",
+        "info": "",
+        "x": 430,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "4e1ca47bc339cb10",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/ph",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "af59cbfbf295912b",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/moisture",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "2a0187c1c3212632",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/humidity",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "3e277aef39a81b61",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/anemometer",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 710,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "3ef610400f4d80fd",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/uv",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 670,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "1a493ae30bacb84c",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem buah-buahan",
+        "info": "",
+        "x": 450,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "6f0807edaab16112",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "e3e6af16a908e0a9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Soil Moisture",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 940,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "5b31fdc3b2baa341",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "e3e6af16a908e0a9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor pH",
+        "label": "unit",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "14",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "f0ebf1d4140fd316",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "e3e6af16a908e0a9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Sunlight",
+        "label": "lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "d25b21be0be9e9ab",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "35129d03be8e8918",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "bab9e8f7937f02b0",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "35129d03be8e8918",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Anemometer",
+        "label": "m/s",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 940,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "24d6f455ec38460f",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "35129d03be8e8918",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor UV",
+        "label": "mW/cm2",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "39cadd0ff4632386",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Berat Buah",
+        "low": "0",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1120,
+        "wires": [
+            [
+                "61b41567c238f0f1",
+                "b99dd34a6a043069"
+            ]
+        ]
+    },
+    {
+        "id": "5ad3c4a2eee45fd8",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Color Hue ",
+        "low": "0",
+        "high": "360",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1160,
+        "wires": [
+            [
+                "6031a9fa3bf7b69a",
+                "b0e2637042b8350d"
+            ]
+        ]
+    },
+    {
+        "id": "61b41567c238f0f1",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/berat",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "6031a9fa3bf7b69a",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/color",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "b99dd34a6a043069",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "314a4c1c32a22bc6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Berat Buah",
+        "label": "kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "b0e2637042b8350d",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "314a4c1c32a22bc6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Color Hue ",
+        "label": "derajat",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "920e3d806ac88473",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Solar Radiation",
+        "low": "0",
+        "high": "2000",
+        "inte": "true",
+        "property": "payload",
+        "x": 450,
+        "y": 1080,
+        "wires": [
+            [
+                "5895a81eeff0f9e3",
+                "f77b8c55532979bc"
+            ]
+        ]
+    },
+    {
+        "id": "5895a81eeff0f9e3",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/radiation",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "f77b8c55532979bc",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "314a4c1c32a22bc6",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Solar Radiation",
+        "label": "W/m2",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 950,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "e59338199f506a0a",
+        "type": "ui_text",
+        "z": "281ae58233493eb9",
+        "group": "d9ef63a22e1ccf08",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "37a6a650bcd8840b",
+        "type": "ui_text",
+        "z": "281ae58233493eb9",
+        "group": "be18ceeed85fa6e8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "e61986e0e020f7c0",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Barometer",
+        "low": "0",
+        "high": "200",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1340,
+        "wires": [
+            [
+                "12dbd0570e1d2871",
+                "375571a8b5ac90b0"
+            ]
+        ]
+    },
+    {
+        "id": "bed3605dfe72c0b1",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Wind Vane ",
+        "low": "0",
+        "high": "360",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1380,
+        "wires": [
+            [
+                "df7fd11e5d020569",
+                "0f505ccadb92f2e8"
+            ]
+        ]
+    },
+    {
+        "id": "08ba66385dae2213",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Visibility",
+        "low": "0",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 1420,
+        "wires": [
+            [
+                "d9786249785499b1",
+                "1f05b770021be609"
+            ]
+        ]
+    },
+    {
+        "id": "d9786249785499b1",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/visibility",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 690,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "89b116cc7fa5c087",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Pabrik Smart Restaurant",
+        "info": "",
+        "x": 450,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "93a3351e4dfa10fd",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem deteksi musim",
+        "info": "",
+        "x": 450,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "7d4e7f8d60b9cbf2",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Inventory Stock",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 450,
+        "y": 1500,
+        "wires": [
+            [
+                "594f88684cdef82b",
+                "a072296119023559"
+            ]
+        ]
+    },
+    {
+        "id": "bd7c0202a609f224",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Selling Rate",
+        "low": "0",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1540,
+        "wires": [
+            [
+                "b574d049584a66c3",
+                "69056e837fa0d66d"
+            ]
+        ]
+    },
+    {
+        "id": "6edc88fec3c95d05",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Customer Satisfaction",
+        "low": "0",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 470,
+        "y": 1580,
+        "wires": [
+            [
+                "30d42dea550a6720",
+                "b9edfc7890112463"
+            ]
+        ]
+    },
+    {
+        "id": "413d9392eab531fb",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem deteksi hasil penjualan",
+        "info": "",
+        "x": 480,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "df7fd11e5d020569",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/wind",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "12dbd0570e1d2871",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/barometer",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 700,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "594f88684cdef82b",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/stock",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 700,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "b574d049584a66c3",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/sellingrate",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 720,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "30d42dea550a6720",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/satisfaction",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 720,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "e086e462424d8e7b",
+        "type": "comment",
+        "z": "281ae58233493eb9",
+        "name": "Subsistem deteksi jumlah pengunjung",
+        "info": "",
+        "x": 490,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "375571a8b5ac90b0",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "b90ed7449a0ee90b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Barometer",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "0f505ccadb92f2e8",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "b90ed7449a0ee90b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Wind Vane",
+        "label": "derajat",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "1f05b770021be609",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "b90ed7449a0ee90b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Visibility",
+        "label": "km",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "a072296119023559",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "e8ef4ced2ccf069e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Inventory Stock",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 950,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "69056e837fa0d66d",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "e8ef4ced2ccf069e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Selling Rate",
+        "label": "item/day",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "b9edfc7890112463",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "e8ef4ced2ccf069e",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Customer Satisfaction",
+        "label": "rate",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 970,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "592a4ed29c79a281",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Audio",
+        "low": "0",
+        "high": "90",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 1700,
+        "wires": [
+            [
+                "09c4073722fa2268",
+                "6d1f72ba8abce5ba"
+            ]
+        ]
+    },
+    {
+        "id": "cca4815589fda305",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Sentimen ",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1740,
+        "wires": [
+            [
+                "f82a9831f935475f",
+                "53bedd55bd4885a7"
+            ]
+        ]
+    },
+    {
+        "id": "09c4073722fa2268",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/audio",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 680,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "f82a9831f935475f",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/sentimen",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 700,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "6d1f72ba8abce5ba",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "df0cae9c95560ac6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Audio",
+        "label": "dB",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "90",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "53bedd55bd4885a7",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "df0cae9c95560ac6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Sentimen",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "e3e715614c1b124c",
+        "type": "random",
+        "z": "281ae58233493eb9",
+        "name": "Sensor Occupancy",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 430,
+        "y": 1660,
+        "wires": [
+            [
+                "e2c46b9ac29061c6",
+                "724ff93892a45332"
+            ]
+        ]
+    },
+    {
+        "id": "e2c46b9ac29061c6",
+        "type": "mqtt out",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/occupancy",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 700,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "724ff93892a45332",
+        "type": "ui_gauge",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "group": "df0cae9c95560ac6",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Occupancy",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "83293bf28c0ac588",
+        "type": "ui_text",
+        "z": "281ae58233493eb9",
+        "group": "c9703bc851fa9113",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "8844d30b711f93d1",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/moisture",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 760,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "034e0c9b1071741e",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/ph",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1210,
+        "y": 800,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "0e702a13279d4817",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/sunlight",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 840,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "8a6b879baef12c6b",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 920,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "2537fb744d7d55a6",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/anemometer",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 960,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "e3aaadd254961c8d",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/uv",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1210,
+        "y": 1000,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "a897b1d745eda510",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/radiation",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 1080,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "c8467d4785895cd0",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/berat",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 1120,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "7f26cd404e461b57",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/color",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 1160,
+        "wires": [
+            [
+                "0ebac304a0b14840"
+            ]
+        ]
+    },
+    {
+        "id": "0ebac304a0b14840",
+        "type": "debug",
+        "z": "281ae58233493eb9",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "fe1812f0ee9c1a04",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/barometer",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 1340,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "9dfc9154aadf2bc8",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p2/wind",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 1380,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "cb470d310fac8a51",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/visibility",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 1420,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "9e22b5e610fe2ccb",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/stock",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 1500,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "843766d206446782",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/sellingrate",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 1540,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "cdbcb2e52b8aba49",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/satisfaction",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 1580,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "333f5926274ffed1",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/occupancy",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1240,
+        "y": 1660,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "dec057480b4a0a33",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/audio",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1220,
+        "y": 1700,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "939573312af837f2",
+        "type": "mqtt in",
+        "z": "281ae58233493eb9",
+        "name": "",
+        "topic": "prauas/p3/sentimen",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 1740,
+        "wires": [
+            [
+                "2ff9ea791c153887"
+            ]
+        ]
+    },
+    {
+        "id": "2ff9ea791c153887",
+        "type": "debug",
+        "z": "281ae58233493eb9",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "727660ac399984c1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "711ccb34613a3b18",
+        "type": "ui_group",
+        "name": "Subsistem susu hewani dan telur",
+        "tab": "9690de8435bbd37e",
+        "order": 4,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3dd209acc787601b",
+        "type": "ui_group",
+        "name": "Subsistem daging merah",
+        "tab": "9690de8435bbd37e",
+        "order": 5,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a3488491e2c6cbca",
+        "type": "ui_group",
+        "name": "Subsistem daging putih",
+        "tab": "9690de8435bbd37e",
+        "order": 6,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3e6af16a908e0a9",
+        "type": "ui_group",
+        "name": "Subsistem sumber karbohidrat",
+        "tab": "9690de8435bbd37e",
+        "order": 7,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "35129d03be8e8918",
+        "type": "ui_group",
+        "name": "Subsistem Sayuran",
+        "tab": "9690de8435bbd37e",
+        "order": 8,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "314a4c1c32a22bc6",
+        "type": "ui_group",
+        "name": "Subsistem buah-buahan",
+        "tab": "9690de8435bbd37e",
+        "order": 9,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d9ef63a22e1ccf08",
+        "type": "ui_group",
+        "name": "Pabrik Smart Farm",
+        "tab": "9690de8435bbd37e",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "be18ceeed85fa6e8",
+        "type": "ui_group",
+        "name": "Pabrik Smart Plantation",
+        "tab": "9690de8435bbd37e",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b90ed7449a0ee90b",
+        "type": "ui_group",
+        "name": "Subsistem deteksi musim",
+        "tab": "9690de8435bbd37e",
+        "order": 10,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e8ef4ced2ccf069e",
+        "type": "ui_group",
+        "name": "Subsistem deteksi hasil penjualan",
+        "tab": "9690de8435bbd37e",
+        "order": 11,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "df0cae9c95560ac6",
+        "type": "ui_group",
+        "name": "Subsistem deteksi jumlah pengunjung",
+        "tab": "9690de8435bbd37e",
+        "order": 12,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c9703bc851fa9113",
+        "type": "ui_group",
+        "name": "Pabrik Smart Restaurant",
+        "tab": "9690de8435bbd37e",
+        "order": 3,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9690de8435bbd37e",
+        "type": "ui_tab",
+        "name": "Pabrik Pra UAS",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
