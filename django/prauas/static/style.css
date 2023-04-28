@@ -27,18 +27,21 @@ h2.mainTitle {
 .bigbox {
     width: 33%;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     text-align: center;
     transition: all 400ms;
     background-color: #212332;
+}
+.bigbox h1 {
+    font-size: 20px;
 }
 .mediumbox {
     display: flex;
 }
 .smallbox {
     width: 90%;
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     border-radius: 20px;
     text-align: center;
@@ -46,13 +49,18 @@ h2.mainTitle {
     background-color: #2a2d3e;
 }
 .smallbox p {
-    font-size: 20px;
+    font-size: 10px;
 }
-.smallbox h1:first-child {
-    font-size: 30px;
+.smallbox h1 {
+    font-size: 15px;
     margin-bottom: 15px;
+    height: 50px;
 }
 .smallbox h2 {
-    font-size: 20px;
-    margin: 20px 0 0;
+    font-size: 10px;
+    margin: 10px 0 0;
+    margin-bottom: 5px;
+}
+.smallboxhr {
+    margin-top: 10px;
 }

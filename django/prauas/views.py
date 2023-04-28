@@ -10,7 +10,33 @@ def home(req):
 
 def api(req):
     data = {
-        "temperature": serialize("json", list(reversed(Temperature.objects.all()))),
+        "Temperature": serialize("json", list(reversed(Temperature.objects.all()))),
+        "Conductivity": serialize("json", list(reversed(Conductivity.objects.all()))),
+        "Flow": serialize("json", list(reversed(Flow.objects.all()))),
+        "CO": serialize("json", list(reversed(CO.objects.all()))),
+        "Amonia": serialize("json", list(reversed(Amonia.objects.all()))),
+        "Pressure": serialize("json", list(reversed(Pressure.objects.all()))),
+        "O2": serialize("json", list(reversed(O2.objects.all()))),
+        "CO2": serialize("json", list(reversed(CO2.objects.all()))),
+        "Waterlevel": serialize("json", list(reversed(Waterlevel.objects.all()))),
+        "Moisture": serialize("json", list(reversed(Moisture.objects.all()))),
+        "PH": serialize("json", list(reversed(PH.objects.all()))),
+        "Sunlight": serialize("json", list(reversed(Sunlight.objects.all()))),
+        "Humidity": serialize("json", list(reversed(Humidity.objects.all()))),
+        "Anemometer": serialize("json", list(reversed(Anemometer.objects.all()))),
+        "UV": serialize("json", list(reversed(UV.objects.all()))),
+        "Radiation": serialize("json", list(reversed(Radiation.objects.all()))),
+        "Berat": serialize("json", list(reversed(Berat.objects.all()))),
+        "Color": serialize("json", list(reversed(Color.objects.all()))),
+        "Barometer": serialize("json", list(reversed(Barometer.objects.all()))),
+        "Wind": serialize("json", list(reversed(Wind.objects.all()))),
+        "Visibility": serialize("json", list(reversed(Visibility.objects.all()))),
+        "Stock": serialize("json", list(reversed(Stock.objects.all()))),
+        "Sellingrate": serialize("json", list(reversed(Sellingrate.objects.all()))),
+        "Satisfaction": serialize("json", list(reversed(Satisfaction.objects.all()))),
+        "Occupancy": serialize("json", list(reversed(Occupancy.objects.all()))),
+        "Audio": serialize("json", list(reversed(Audio.objects.all()))),
+        "Sentimen": serialize("json", list(reversed(Sentimen.objects.all()))),
     }
     return JsonResponse(data)
 
