@@ -72,6 +72,7 @@ Subsistem deteksi hasil penjualan
 Subsistem deteksi jumlah pengunjung restoran
 * Aktuator Petunjuk Jumlah Kursi (0-100)
 
+Aktuator Pabrik
 * Aktuator smart farm		: Output produk (0-1000 kg/hari)
 * Aktuator smart plantation	: Hasil tanam (0-100 ton/bulan)
 * Aktuator Smart Restaurant	: Proyeksi Keuntungan (-10-200 jt/bulan)
