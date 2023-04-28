@@ -1,28 +1,18 @@
 from django.shortcuts import render
-from rest_framework.generics import RetrieveUpdateDestroyAPIView
-from rest_framework.response import Response
+from django.http import JsonResponse
+from django.core.serializers import serialize
+
 import paho.mqtt.client as mqtt
-
 from .mqtt import *
-from .serializers import SensorSerializer
-from .models import Sensor
 
-def webview(request):
-    all = Sensor.objects.all()
-    print(all)
-    return render(request, 'webview.html', {
-                'all': int(all.value),
-                })
+def home(req):
+    return render(req, "index.html")
 
-class SensorDetails(RetrieveUpdateDestroyAPIView):
-    serializer_class = SensorSerializer
-    queryset = Sensor.objects.all()
-    def retrieve(self, request, *args, **kwargs):
-        temperature = Sensor.objects.get(name="temperature")
-        sensor_value={
-            "Temperature Sensor": int(temperature.value),
-            }
-        return Response(sensor_value)     
+def api(req):
+    data = {
+        "temperature": serialize("json", list(reversed(Temperature.objects.all()))),
+    }
+    return JsonResponse(data)
 
 client = mqtt.Client("prauas")
 client.message_callback_add('prauas/p1/temperature', on_message_temperature)
