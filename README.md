@@ -31,7 +31,7 @@ Pabrik Smart Plantation
   * Sensor Berat Buah (0-10 kg)
   * Sensor Color Hue (0-360O)
 
-3. Pabrik Smart Restaurant
+Pabrik Smart Restaurant
 1.	Subsistem deteksi musim
   * Sensor Barometer (0-200 kPa)
   * Sensor Wind Vane (0-360O)
