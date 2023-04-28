@@ -9,6 +9,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="{% static 'style.css' %}" />
     </head>
+    
     <body>
 
         <h1 class="mainTitle">PRAUAS</h1>
@@ -28,7 +29,7 @@
                         <p><span id="Flow"></span> L/min</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Milking Machine</h2>
-                        <p><span id="system1_hvac"></span> mm/s</p>
+                        <p><span id="milking_machine"></span> mm/s</p>
                     </div>
                     <div class="smallbox">
                         <h1>Subsistem Daging Merah</h1>
@@ -40,7 +41,7 @@
                         <p><span id="Pressure"></span> kPa</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Slaughter Machine</h2>
-                        <p><span id="system1_hvac"></span>rad/s</p>
+                        <p><span id="slaughter_machine"></span> rad/s</p>
                     </div>
                     <div class="smallbox">
                         <h1>Subsistem Daging Putih</h1>
@@ -52,9 +53,11 @@
                         <p><span id="Waterlevel"></span> m</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Feeding Machine</h2>
-                        <p><span id="system1_hvac"></span> cm&#xB2;/s</p>
+                        <p><span id="feeding_machine"></span> cm&#xB2;/s</p>
                     </div>
                 </div>
+                <h2>Output Produk</h2>
+                <p><span id="output_produk"></span> produk/hari</p>
             </div>
             <!-- =============================================================================================== -->
             <div class="bigbox">
@@ -70,7 +73,7 @@
                         <p><span id="Sunlight"></span> lux</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Milking Machine</h2>
-                        <p><span id="system1_hvac"></span> mm/s</p>
+                        <p><span id="gramasi_karbo"></span> mm/s</p>
                     </div>
                     <div class="smallbox">
                         <h1>Subsistem Sayuran</h1>
@@ -82,7 +85,7 @@
                         <p><span id="UV"></span> mW/cm&#xB2;</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Slaughter Machine</h2>
-                        <p><span id="system1_hvac"></span>rad/s</p>
+                        <p><span id="sprayer"></span>rad/s</p>
                     </div>
                     <div class="smallbox">
                         <h1>Subsistem Buah-Buahan</h1>
@@ -94,9 +97,11 @@
                         <p><span id="Color"></span>&deg;</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Feeding Machine</h2>
-                        <p><span id="system1_hvac"></span> cm&#xB2;/s</p>
+                        <p><span id="pemberi_pupuk"></span> cm&#xB2;/s</p>
                     </div>
                 </div>
+                <h2>Hasil Tanam</h2>
+                <p><span id="hasil_tanam"></span> ton/bulan</p>
             </div>
             <!-- =============================================================================================== -->
             <div class="bigbox">
@@ -112,7 +117,7 @@
                         <p><span id="Visibility"></span> km</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Milking Machine</h2>
-                        <p><span id="system1_hvac"></span> mm/s</p>
+                        <p><span id="aircon"></span> mm/s</p>
                     </div>
                     <div class="smallbox">
                         <h1>Subsistem Deteksi Penjualan</h1>
@@ -124,7 +129,7 @@
                         <p><span id="Satisfaction"></span></p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Slaughter Machine</h2>
-                        <p><span id="system1_hvac"></span>rad/s</p>
+                        <p><span id="hasil_penjualan"></span>rad/s</p>
                     </div>
                     <div class="smallbox">
                         <h1>Subsistem Pengunjung Restoran</h1>
@@ -136,12 +141,21 @@
                         <p><span id="Sentimen"></span>%</p>
                         <hr class="smallboxhr">
                         <h2>Aktuator Feeding Machine</h2>
-                        <p><span id="system1_hvac"></span> cm&#xB2;/s</p>
+                        <p><span id="jumlah_kursi"></span> cm&#xB2;/s</p>
                     </div>
                 </div>
+                <h2>Proyeksi Keuntungan</h2>
+                <p><span id="proyeksi_keuntungan"></span> jt/bulan</p>
             </div>
             <!-- =============================================================================================== -->
         </div>
+        
+        <!-- <div class="container">
+            <h2>Output Nilai Pabrik</h2>
+            <p>(0-100)</p>
+            <p><span id="proyeksi_keuntungan"></span></p>
+        </div> -->
+        
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script>
@@ -282,6 +296,68 @@
                     );
                 document.querySelector("#Sentimen").innerHTML =
                     Sentimen[0].fields.value;
+
+                const milking_machine = JSON.parse(
+                    message["milking_machine"]
+                    );
+                document.querySelector("#milking_machine").innerHTML =
+                    milking_machine;
+                const slaughter_machine = JSON.parse(
+                    message["slaughter_machine"]
+                    );
+                document.querySelector("#slaughter_machine").innerHTML =
+                    slaughter_machine;
+                const feeding_machine = JSON.parse(
+                    message["feeding_machine"]
+                    );
+                document.querySelector("#feeding_machine").innerHTML =
+                    feeding_machine;
+                const gramasi_karbo = JSON.parse(
+                    message["gramasi_karbo"]
+                    );
+                document.querySelector("#gramasi_karbo").innerHTML =
+                    gramasi_karbo;
+                const sprayer = JSON.parse(
+                    message["sprayer"]
+                    );
+                document.querySelector("#sprayer").innerHTML =
+                    sprayer;
+                const pemberi_pupuk = JSON.parse(
+                    message["pemberi_pupuk"]
+                    );
+                document.querySelector("#pemberi_pupuk").innerHTML =
+                    pemberi_pupuk;
+                const aircon = JSON.parse(
+                    message["aircon"]
+                    );
+                document.querySelector("#aircon").innerHTML =
+                    aircon;
+                const hasil_penjualan = JSON.parse(
+                    message["hasil_penjualan"]
+                    );
+                document.querySelector("#hasil_penjualan").innerHTML =
+                    hasil_penjualan;
+                const jumlah_kursi = JSON.parse(
+                    message["jumlah_kursi"]
+                    );
+                document.querySelector("#jumlah_kursi").innerHTML =
+                    jumlah_kursi;
+
+                const output_produk = JSON.parse(
+                    message["output_produk"]
+                    );
+                document.querySelector("#output_produk").innerHTML =
+                    output_produk;
+                const hasil_tanam = JSON.parse(
+                    message["hasil_tanam"]
+                    );
+                document.querySelector("#hasil_tanam").innerHTML =
+                    hasil_tanam;
+                const proyeksi_keuntungan = JSON.parse(
+                    message["proyeksi_keuntungan"]
+                    );
+                document.querySelector("#proyeksi_keuntungan").innerHTML =
+                    proyeksi_keuntungan;
 
             }
 
