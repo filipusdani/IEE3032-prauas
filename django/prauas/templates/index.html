@@ -150,11 +150,12 @@
             <!-- =============================================================================================== -->
         </div>
         
-        <!-- <div class="container">
-            <h2>Output Nilai Pabrik</h2>
-            <p>(0-100)</p>
-            <p><span id="proyeksi_keuntungan"></span></p>
-        </div> -->
+        <div class="container">
+            <div class="bigbox">
+                <h2>Output Nilai Pabrik</h2>
+                <p><span id="nilai_pabrik"></span></p>
+            </div>
+        </div>
         
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -358,6 +359,11 @@
                     );
                 document.querySelector("#proyeksi_keuntungan").innerHTML =
                     proyeksi_keuntungan;
+                const nilai_pabrik = JSON.parse(
+                    message["nilai_pabrik"]
+                    );
+                document.querySelector("#nilai_pabrik").innerHTML =
+                    nilai_pabrik;
 
             }
 
@@ -369,7 +375,7 @@
 
             setInterval(function () {
                 const e = getData();
-            }, 1000);
+            }, 2000);
 
             Number.prototype.pad = function (size) {
                 var s = String(this);

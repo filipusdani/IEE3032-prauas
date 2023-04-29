@@ -51,6 +51,7 @@ def api(req):
         "output_produk": output_produk,
         "hasil_tanam": hasil_tanam,
         "proyeksi_keuntungan": proyeksi_keuntungan,
+        "nilai_pabrik": nilai_pabrik,
     }
     return JsonResponse(data)
 

@@ -31,7 +31,7 @@ Pabrik Smart Plantation
   * Sensor Berat Buah (0-10 kg)
   * Sensor Color Hue (0-360O)
 
-3. Pabrik Smart Restaurant
+Pabrik Smart Restaurant
 1.	Subsistem deteksi musim
   * Sensor Barometer (0-200 kPa)
   * Sensor Wind Vane (0-360O)
@@ -72,8 +72,9 @@ Subsistem deteksi hasil penjualan
 Subsistem deteksi jumlah pengunjung restoran
 * Aktuator Petunjuk Jumlah Kursi (0-100)
 
-Aktuator smart farm		: Output produk (0-1000 kg/hari)
-Aktuator smart plantation	: Hasil tanam (0-100 ton/bulan)
-Aktuator Smart Restaurant	: Proyeksi Keuntungan (-10-200 jt/bulan)
+Aktuator Pabrik
+* Aktuator smart farm		: Output produk (0-1000 kg/hari)
+* Aktuator smart plantation	: Hasil tanam (0-100 ton/bulan)
+* Aktuator Smart Restaurant	: Proyeksi Keuntungan (-10-200 jt/bulan)
 
 Aktuator Pabrik		: Output nilai pabrik (0-100)
