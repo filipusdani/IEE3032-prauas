@@ -11,6 +11,8 @@ def home(req):
 
 def api(req):
     milking_machine,slaughter_machine,feeding_machine,gramasi_karbo,sprayer,pemberi_pupuk,aircon,hasil_penjualan,jumlah_kursi,output_produk,hasil_tanam,proyeksi_keuntungan,nilai_pabrik = hitung_ml()
+    test_value = [o.value for o in (list(reversed(Temperature.objects.all())))]
+    test_labels = [str(o.date_created) for o in (list(reversed(Temperature.objects.all())))]
     data = {
         "Temperature": serialize("json", list(reversed(Temperature.objects.all()))),
         "Conductivity": serialize("json", list(reversed(Conductivity.objects.all()))),
@@ -52,6 +54,8 @@ def api(req):
         "hasil_tanam": hasil_tanam,
         "proyeksi_keuntungan": proyeksi_keuntungan,
         "nilai_pabrik": nilai_pabrik,
+        "test_value": test_value,
+        "test_labels": test_labels,
     }
     return JsonResponse(data)
 

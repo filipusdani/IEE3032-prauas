@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     
     <body>
@@ -68,7 +70,7 @@
                         <h2>Sensor Soil Moisture</h2>
                         <p><span id="Moisture"></span>%</p>
                         <h2>Sensor pH</h2>
-                        <p><span id="PH"></span>)</p>
+                        <p><span id="PH"></span></p>
                         <h2>Sensor Sunlight</h2>
                         <p><span id="Sunlight"></span> lux</p>
                         <hr class="smallboxhr">
@@ -156,12 +158,21 @@
                 <p><span id="nilai_pabrik"></span></p>
             </div>
         </div>
-        
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+        <!-- ===================================== CHART DISPLAY ===================================== -->
+
+        <div class="container">
+            <div class="bigbox">
+                <h2>Test Chart</h2>
+                <p><span id="test_value"></span></p>
+                <canvas id="myChart", width="400", height="400"></canvas>
+            </div>
+        </div>
+
+        <!-- ===================================== CHART DISPLAY ===================================== -->
+    
         <script>
             function updateView(message) {
-
                 const Temperature = JSON.parse(
                     message["Temperature"]
                     );
@@ -365,6 +376,16 @@
                 document.querySelector("#nilai_pabrik").innerHTML =
                     nilai_pabrik;
 
+                // =====================================================================
+                const test_value = 
+                    message["test_value"];
+                document.querySelector("#test_value").innerHTML =
+                    test_value
+                const test_labels = 
+                    message["test_labels"];
+                document.querySelector("#test_labels").innerHTML =
+                    test_labels
+                // =====================================================================
             }
 
             function getData() {
@@ -384,6 +405,31 @@
                 }
                 return s;
             };
+        </script>
+
+        <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [{
+                        label: 'My First dataset',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [0, 10, 5, 2, 20, 30, 45],
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
         </script>
     </body>
 </html>
